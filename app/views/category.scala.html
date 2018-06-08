@@ -1,0 +1,12 @@
+@(categories: List[Category])
+<!DOCTYPE html>
+@import helper._
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories</title>
+</head>
+<body>
+@for(i <- 0 to categories.size() - 1){@categories.get(i).getCategoryName@if(i < categories.size() - 1){,}}
+</body>
+</html>

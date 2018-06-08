@@ -1,0 +1,6 @@
+INSERT INTO Category (CategoryId, CategoryName) VALUE (1, 'Breakfast')
+INSERT INTO Category (CategoryId, CategoryName) VALUE (2, 'Appetizers')
+INSERT INTO Category (CategoryId, CategoryName) VALUE (3, 'Salad/Soup')
+INSERT INTO Category (CategoryId, CategoryName) VALUE (4, 'Entree')
+INSERT INTO Category (CategoryId, CategoryName) VALUE (5, 'Dessert')
+INSERT INTO Category (CategoryId, CategoryName) VALUE (6, 'Drinks')
