@@ -1,0 +1,42 @@
+@(page:String)
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <ul class="navbar-nav">
+        @if("Breakfast".equals(page)){
+        <li class="nav-item active">
+            }else{
+        <li class="nav-item">}
+            <a class="nav-link" href="breakfast">Breakfast</a>
+        </li>
+        @if("Appetizers".equals(page)){
+        <li class="nav-item active">
+            }else{
+        <li class="nav-item">}
+            <a class="nav-link" href="appetizers">Appetizers</a>
+        </li>
+        @if("Salad/Soup".equals(page)){
+        <li class="nav-item active">
+            }else{
+        <li class="nav-item">}
+            <a class="nav-link" href="saladsoup">Salad/Soup</a>
+        </li>
+        @if("Entree".equals(page)){
+        <li class="nav-item active">
+            }else{
+        <li class="nav-item">}
+            <a class="nav-link" href="entree">Entree</a>
+        </li>
+        @if("Dessert".equals(page)){
+        <li class="nav-item active">
+            }else{
+        <li class="nav-item">}
+            <a class="nav-link" href="dessert">Dessert</a>
+        </li>
+        @if("Drinks".equals(page)){
+        <li class="nav-item active">
+            }else{
+        <li class="nav-item">}
+            <a class="nav-link" href="drinks">drinks</a>
+        </li>
+    </ul>
+</nav>
+</html>

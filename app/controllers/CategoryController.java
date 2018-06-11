@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Category;
+import play.data.DynamicForm;
 import play.data.FormFactory;
 import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
@@ -25,6 +26,7 @@ public class CategoryController extends Controller
     @Transactional(readOnly = true)
     public Result getCategory()
     {
+       // DynamicForm form = formFactory.form().bindFromRequest();
         String sql = "SELECT c from Category c";
         List<Category> categories = jpaApi.em().createQuery(sql, Category.class).getResultList();
 
