@@ -1,6 +1,12 @@
 @(page:String)
-<nav class="navbar navbar-expand-sm bg-light navbar-light">
+<nav class="navbar navbar-expand-lg bg-light navbar-light">
     <ul class="navbar-nav">
+        @if("Home".equals(page)){
+        <li class="nav-item active">
+            }else{
+        <li class="nav-item">}
+            <a class="nav-link" href="home">Home</a>
+        </li>
         @if("Breakfast".equals(page)){
         <li class="nav-item active">
             }else{
@@ -35,7 +41,13 @@
         <li class="nav-item active">
             }else{
         <li class="nav-item">}
-            <a class="nav-link" href="drinks">drinks</a>
+            <a class="nav-link" href="drinks">Drinks</a>
+        </li>
+        @if("AddRecipe".equals(page)){
+        <li class="nav-item active">
+            }else{
+        <li class="nav-item">}
+            <a class="nav-link" href="addrecipe">Add Recipe</a>
         </li>
     </ul>
 </nav>

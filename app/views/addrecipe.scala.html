@@ -1,0 +1,69 @@
+@( categories: List[Category], amounts: List[Amount], measurements: List[Measurement])
+<!DOCTYPE html>
+@import helper._
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css" >
+    <title>Add Recipe</title>
+</head>
+<body>
+@NavBar.render("addrecipe")
+<h1>ADD NEW RECIPE</h1>
+<form method="post" enctype="multipart/form-data">
+    @CSRF.formField
+    Recipe Name:<input type="text" name="recipename" id="recipename" maxlength="200">
+    <br>
+  Choose a Category:  <select name="categoryId" id="categoryId">
+        @for(category <- categories){
+        <option value="@category.getCategoryId">@category.getCategoryName</option>
+        }
+    </select>
+    <br>
+    Ingredients:
+    <br>
+    <select name="amountId" id = "amountId">
+        @for(amount <- amounts){
+        <option value="@amount.getAmountId">@amount.getAmountName</option>
+        }
+    </select>
+    <select name="measurementId" id="measurementId">
+        @for(measurement <- measurements){
+        <option value="@measurement.getMeasurementId">@measurement.getMeasurementName</option>}
+    </select>
+    <input type="text" name="ingredientname" id="ingredientname" maxlength="100">
+    <br>
+    <select name="amountId" id = "amountId">
+        @for(amount <- amounts){
+        <option value="@amount.getAmountId">@amount.getAmountName</option>
+        }
+    </select>
+    <select name="measurementId" id="measurementId">
+        @for(measurement <- measurements){
+        <option value="@measurement.getMeasurementId">@measurement.getMeasurementName</option>}
+    </select>
+    <input type="text" name="ingredientname" id="ingredientname" maxlength="100">
+    <br>
+    <select name="amountId" id = "amountId">
+        @for(amount <- amounts){
+        <option value="@amount.getAmountId">@amount.getAmountName</option>
+        }
+    </select>
+    <select name="measurementId" id="measurementId">
+        @for(measurement <- measurements){
+        <option value="@measurement.getMeasurementId">@measurement.getMeasurementName</option>}
+    </select>
+    <input type="text" name="ingredientname" id="ingredientname" maxlength="100">
+
+    <br>
+    <br>
+    Directions:<br>
+    <p><input type="text" name="directions" id="directions" maxlength="500"></p>
+    <p> <input type="text" name="directions" id="directions" maxlength="500"></p>
+    <p> <input type="text" name="directions" id="directions" maxlength="500"></p>
+
+</form>
+
+</body>
+</html>

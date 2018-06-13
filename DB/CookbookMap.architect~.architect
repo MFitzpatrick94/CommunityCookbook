@@ -45,7 +45,7 @@
     <column id="COL10" populated="true" UUID="d5b17340-ad3e-4d03-b1f0-81b33879dea0" autoIncrement="false" autoIncrementSequenceName="Recipe_Author_seq" defaultValue="" name="Author" nullable="0" physicalName="Author" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL11" populated="true" UUID="3bb3d885-1882-4f90-86c2-613b0dbe0e27" autoIncrement="false" autoIncrementSequenceName="Recipe_CookTime_seq" defaultValue="" name="CookTime" nullable="0" physicalName="CookTime" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL11" populated="true" UUID="3bb3d885-1882-4f90-86c2-613b0dbe0e27" autoIncrement="false" autoIncrementSequenceName="Recipe_CookTime_seq" defaultValue="" name="CookTime" nullable="0" physicalName="CookTime" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL12" populated="true" UUID="81c44d13-6061-4a55-a11e-b39fdd519b7f" autoIncrement="false" autoIncrementSequenceName="Recipe_ServingSize_seq" defaultValue="" name="ServingSize" nullable="1" physicalName="ServingSize" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
@@ -149,7 +149,7 @@
   <table id="TAB38" populated="true" UUID="61160b7b-e35a-4b16-b071-e129f4ace208" name="Measurement" objectType="TABLE" physicalName="Measurement" >
    <remarks></remarks>
    <folder id="FOLTAB381" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL39" populated="true" UUID="28055bf6-37f2-45c3-89cc-e09b634d8d11" autoIncrement="true" autoIncrementSequenceName="Measurement_MeasurementId_seq" defaultValue="" name="MeasurementId" nullable="0" physicalName="MeasurementId" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL39" populated="true" UUID="28055bf6-37f2-45c3-89cc-e09b634d8d11" autoIncrement="true" autoIncrementSequenceName="Measurement_MeasurementId_seq_1" defaultValue="" name="MeasurementId" nullable="0" physicalName="MeasurementId" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL40" populated="true" UUID="56eb213e-d654-4dfe-846f-7ba53bc6bc39" autoIncrement="false" autoIncrementSequenceName="Measurement_MeasurementName_seq" defaultValue="" name="MeasurementName" nullable="0" physicalName="MeasurementName" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -161,7 +161,7 @@
     <folder id="FOLTAB382" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB384" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX41" populated="true" UUID="6ecc57ee-fed9-49e3-b5aa-194738596306" clustered="false" name="Measurement_pk" physicalName="Measurement_pk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX41" populated="true" UUID="6ecc57ee-fed9-49e3-b5aa-194738596306" clustered="false" name="Measurement_pk" physicalName="measurement_pk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC42" populated="true" UUID="1a839cb9-2bbd-4ca5-ae28-e3e2291f194b" ascendingOrDescending="UNSPECIFIED" column-ref="COL39" name="MeasurementId" physicalName="MeasurementId" />
     </index>
    </folder>
@@ -169,7 +169,7 @@
   <table id="TAB43" populated="true" UUID="c45d8eab-f939-468a-af7a-9da9cb057ff3" name="Amount" objectType="TABLE" physicalName="Amount" >
    <remarks></remarks>
    <folder id="FOLTAB431" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL44" populated="true" UUID="7e772578-1979-491f-9688-fdf1ee00d902" autoIncrement="true" autoIncrementSequenceName="Amount_AmountId_seq" defaultValue="" name="AmountId" nullable="0" physicalName="AmountId" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL44" populated="true" UUID="7e772578-1979-491f-9688-fdf1ee00d902" autoIncrement="true" autoIncrementSequenceName="Amount_AmountId_seq_1" defaultValue="" name="AmountId" nullable="0" physicalName="AmountId" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL45" populated="true" UUID="7ca85ca8-9828-4e7b-aecf-72eff7e9b337" autoIncrement="false" autoIncrementSequenceName="Amount_AmountName_seq" defaultValue="" name="AmountName" nullable="0" physicalName="AmountName" precision="10" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -181,7 +181,7 @@
     <folder id="FOLTAB432" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB434" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX46" populated="true" UUID="60231e6e-f962-42b4-9b28-bfd39434c0e3" clustered="false" name="Amount_pk" physicalName="Amount_pk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX46" populated="true" UUID="60231e6e-f962-42b4-9b28-bfd39434c0e3" clustered="false" name="Amount_pk" physicalName="amount_pk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC47" populated="true" UUID="e10df8a7-dfb9-4cf4-89ed-f5f00a5006c7" ascendingOrDescending="UNSPECIFIED" column-ref="COL44" name="AmountId" physicalName="AmountId" />
     </index>
    </folder>
@@ -199,10 +199,10 @@
    <relationship id="REL54" populated="true" UUID="4d5ba8c0-7f67-4fc0-9725-bc0c7da80d4f" deferrability="7" deleteRule="3" fk-table-ref="TAB6" fkCardinality="7" identifying="false" name="User_Recipe_fk" physicalName="user_recipe_fk" pk-table-ref="TAB25" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP55" populated="true" UUID="6d9b6978-40a3-4566-9a2c-f8f6b6b20bca" fk-column-ref="COL14" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL26" />
    </relationship>
-   <relationship id="REL56" populated="true" UUID="9289cf03-d429-4867-a69b-9a0703229940" deferrability="7" deleteRule="3" fk-table-ref="TAB30" fkCardinality="7" identifying="false" name="Measurement_Ingredient_fk" physicalName="Measurement_Ingredient_fk" pk-table-ref="TAB38" pkCardinality="2" updateRule="3" >
+   <relationship id="REL56" populated="true" UUID="9289cf03-d429-4867-a69b-9a0703229940" deferrability="7" deleteRule="3" fk-table-ref="TAB30" fkCardinality="7" identifying="false" name="Measurement_Ingredient_fk" physicalName="measurement_ingredient_fk" pk-table-ref="TAB38" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP57" populated="true" UUID="7cce5d17-19a8-4d1f-933a-d5b06b08a209" fk-column-ref="COL35" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL39" />
    </relationship>
-   <relationship id="REL58" populated="true" UUID="855858df-130f-4a95-8a29-3c2a6ae15b34" deferrability="7" deleteRule="3" fk-table-ref="TAB30" fkCardinality="7" identifying="false" name="Amount_Ingredient_fk" physicalName="Amount_Ingredient_fk" pk-table-ref="TAB43" pkCardinality="2" updateRule="3" >
+   <relationship id="REL58" populated="true" UUID="855858df-130f-4a95-8a29-3c2a6ae15b34" deferrability="7" deleteRule="3" fk-table-ref="TAB30" fkCardinality="7" identifying="false" name="Amount_Ingredient_fk" physicalName="amount_ingredient_fk" pk-table-ref="TAB43" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP59" populated="true" UUID="a410eca2-643b-4755-a27e-22cfa13dced0" fk-column-ref="COL34" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL44" />
    </relationship>
   </relationships>
