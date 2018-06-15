@@ -6,6 +6,6 @@
 GET     /                           controllers.CategoryController.getCategory
 GET     /home                       controllers.CategoryController.getCategory
 GET     /addrecipe                  controllers.RecipeController.getAddRecipe
-
+POST    /addrecipe                  controllers.RecipeController.postAddRecipe
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

@@ -8,15 +8,58 @@ public class Ingredient
 {
     @Id
     private int ingredientId;
-    private int ingredientName;
+    private String ingredientName;
+    private int recipeId;
+    private int amountId;
+    private int measurementId;
 
     public int getIngredientId()
     {
         return ingredientId;
     }
 
-    public int getIngredientName()
+    public String getIngredientName()
     {
         return ingredientName;
+    }
+
+    public void setIngredientId(int ingredientId)
+    {
+        this.ingredientId = ingredientId;
+    }
+
+    public void setIngredientName(String ingredientName)
+    {
+        this.ingredientName = ingredientName;
+    }
+
+    public int getRecipeId()
+    {
+        return recipeId;
+    }
+
+    public void setRecipeId(int recipeId)
+    {
+        this.recipeId = recipeId;
+    }
+
+    public int getAmountId()
+    {
+        return amountId;
+    }
+
+    public void setAmountId(int amountId)
+    {
+        this.amountId = amountId;
+    }
+
+    public int getMeasurementId()
+    {
+        return measurementId;
+    }
+
+    public void setMeasurementId(int measurementId)
+    {
+        this.measurementId = measurementId;
     }
 }

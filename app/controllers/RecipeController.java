@@ -1,8 +1,7 @@
 package controllers;
 
-import models.Amount;
-import models.Category;
-import models.Measurement;
+import models.*;
+import play.data.DynamicForm;
 import play.data.FormFactory;
 import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
@@ -36,5 +35,47 @@ public class RecipeController extends Controller
         List<Amount> amounts = jpaApi.em().createQuery(amountSQL, Amount.class).getResultList();
         List<Category> categories = jpaApi.em().createQuery(sql, Category.class).getResultList();
         return ok(views.html.addrecipe.render(categories, amounts, measurements));
+    }
+
+    @Transactional
+    public Result postAddRecipe()
+    {
+        DynamicForm form = formFactory.form().bindFromRequest();
+
+        int categoryId = Integer.parseInt(form.get("categoryId"));
+        String recipeName = form.get("recipeName");
+        int amountId = Integer.parseInt(form.get("amountId"));
+        int measurementId = Integer.parseInt(form.get("measurementId"));
+        String ingredientName1 = form.get("ingredientName1");
+        String step = form.get("step");
+        String authorName = form.get("authorName");
+        String cookTime = form.get("cookTime");
+        int stepNumber = Integer.parseInt(form.get("stepNumber"));
+
+        Recipe addRecipe = new Recipe();
+        addRecipe.setRecipeName(recipeName);
+        addRecipe.setCategoryId(categoryId);
+        addRecipe.setAuthor(authorName);
+        addRecipe.setCookTime(cookTime);
+
+
+        jpaApi.em().persist(addRecipe);
+
+        Ingredient ingredient = new Ingredient();
+        ingredient.setIngredientName(ingredientName1);
+        ingredient.setAmountId(amountId);
+        ingredient.setMeasurementId(measurementId);
+        ingredient.setRecipeId(addRecipe.getRecipeId());
+
+        Directions directions = new Directions();
+        directions.setStep(step);
+        directions.setStepNumber(stepNumber);
+        directions.setRecipeId(addRecipe.getRecipeId());
+
+        jpaApi.em().persist(ingredient);
+        jpaApi.em().persist(directions);
+
+
+        return redirect(routes.CategoryController.getCategory());
     }
 }

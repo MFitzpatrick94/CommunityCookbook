@@ -19,4 +19,14 @@ public class Measurement
     {
         return measurementName;
     }
+
+    public void setMeasurementId(int measurementId)
+    {
+        this.measurementId = measurementId;
+    }
+
+    public void setMeasurementName(String measurementName)
+    {
+        this.measurementName = measurementName;
+    }
 }

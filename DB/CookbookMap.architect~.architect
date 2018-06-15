@@ -120,10 +120,10 @@
   <table id="TAB30" populated="true" UUID="e72980ce-256f-40dc-8671-7f54b14f3b76" name="Ingredient" objectType="TABLE" physicalName="Ingredient" >
    <remarks></remarks>
    <folder id="FOLTAB301" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL31" populated="true" UUID="d41c11a3-a3e4-4165-b018-7d1be68f501d" autoIncrement="true" autoIncrementSequenceName="Ingredient_IngrediantId_seq" defaultValue="" name="IngrediantId" nullable="0" physicalName="IngrediantId" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL31" populated="true" UUID="d41c11a3-a3e4-4165-b018-7d1be68f501d" autoIncrement="true" autoIncrementSequenceName="Ingredient_IngrediantId_seq" defaultValue="" name="IngredientId" nullable="0" physicalName="IngredientId" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL32" populated="true" UUID="4f009110-8043-42f3-9263-652ffc7dee04" autoIncrement="false" autoIncrementSequenceName="Ingredient_IngrediantName_seq" defaultValue="" name="IngrediantName" nullable="0" physicalName="IngrediantName" precision="200" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL32" populated="true" UUID="4f009110-8043-42f3-9263-652ffc7dee04" autoIncrement="false" autoIncrementSequenceName="Ingredient_IngrediantName_seq" defaultValue="" name="IngredientName" nullable="0" physicalName="IngredientName" precision="200" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL33" populated="true" UUID="4758c26c-48fe-44e3-808f-ff35727d5779" autoIncrement="false" autoIncrementSequenceName="Recipe_RecipeId_seq_2" defaultValue="" name="RecipeId" nullable="0" physicalName="RecipeId" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
@@ -142,7 +142,7 @@
     </folder>
     <folder id="FOLTAB304" populated="true" name="Indices" physicalName="Indices" type="4">
     <index id="IDX36" populated="true" UUID="457302a1-e3e3-44e6-9dd1-bc33f1a36e41" clustered="false" name="Ingredient_pk" physicalName="ingredient_pk" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC37" populated="true" UUID="387db7df-6592-4b75-9ce4-c641d3d24d2f" ascendingOrDescending="UNSPECIFIED" column-ref="COL31" name="IngrediantId" physicalName="IngrediantId" />
+     <index-column id="IDC37" populated="true" UUID="387db7df-6592-4b75-9ce4-c641d3d24d2f" ascendingOrDescending="UNSPECIFIED" column-ref="COL31" name="IngredientId" physicalName="IngredientId" />
     </index>
    </folder>
   </table>
@@ -187,27 +187,27 @@
    </folder>
   </table>
   <relationships>
-   <relationship id="REL48" populated="true" UUID="8c093c0b-89f8-412e-9ea7-4b873fd835e3" deferrability="7" deleteRule="3" fk-table-ref="TAB6" fkCardinality="7" identifying="false" name="Category_Recipe_fk" physicalName="category_recipe_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+   <relationship id="REL48" populated="true" UUID="8c093c0b-89f8-412e-9ea7-4b873fd835e3" deferrability="7" deleteRule="3" fk-table-ref="TAB6" fkCardinality="7" identifying="false" name="Category_Recipe_fk" physicalName="Category_Recipe_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP49" populated="true" UUID="2b1693c0-77d7-4f19-94b8-b5102cb07cb0" fk-column-ref="COL13" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
-   <relationship id="REL50" populated="true" UUID="ab7007a0-eafe-4f80-95f0-2d57eab4ee03" deferrability="7" deleteRule="3" fk-table-ref="TAB17" fkCardinality="7" identifying="false" name="Recipe_Directions_fk" physicalName="recipe_directions_fk" pk-table-ref="TAB6" pkCardinality="2" updateRule="3" >
+   <relationship id="REL50" populated="true" UUID="ab7007a0-eafe-4f80-95f0-2d57eab4ee03" deferrability="7" deleteRule="3" fk-table-ref="TAB17" fkCardinality="7" identifying="false" name="Recipe_Directions_fk" physicalName="Recipe_Directions_fk" pk-table-ref="TAB6" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP51" populated="true" UUID="df6891c3-3bb2-47a8-b373-3cfcad09100c" fk-column-ref="COL22" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL7" />
    </relationship>
-   <relationship id="REL52" populated="true" UUID="fed8adac-5bd2-426b-b28f-f3802c7a010c" deferrability="7" deleteRule="3" fk-table-ref="TAB30" fkCardinality="7" identifying="false" name="Recipe_Ingredient_fk" physicalName="recipe_ingredient_fk" pk-table-ref="TAB6" pkCardinality="2" updateRule="3" >
+   <relationship id="REL52" populated="true" UUID="fed8adac-5bd2-426b-b28f-f3802c7a010c" deferrability="7" deleteRule="3" fk-table-ref="TAB30" fkCardinality="7" identifying="false" name="Recipe_Ingredient_fk" physicalName="Recipe_Ingredient_fk" pk-table-ref="TAB6" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP53" populated="true" UUID="e718c712-d565-4434-a57b-0753978430cf" fk-column-ref="COL33" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL7" />
    </relationship>
-   <relationship id="REL54" populated="true" UUID="4d5ba8c0-7f67-4fc0-9725-bc0c7da80d4f" deferrability="7" deleteRule="3" fk-table-ref="TAB6" fkCardinality="7" identifying="false" name="User_Recipe_fk" physicalName="user_recipe_fk" pk-table-ref="TAB25" pkCardinality="2" updateRule="3" >
+   <relationship id="REL54" populated="true" UUID="4d5ba8c0-7f67-4fc0-9725-bc0c7da80d4f" deferrability="7" deleteRule="3" fk-table-ref="TAB6" fkCardinality="7" identifying="false" name="User_Recipe_fk" physicalName="User_Recipe_fk" pk-table-ref="TAB25" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP55" populated="true" UUID="6d9b6978-40a3-4566-9a2c-f8f6b6b20bca" fk-column-ref="COL14" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL26" />
    </relationship>
-   <relationship id="REL56" populated="true" UUID="9289cf03-d429-4867-a69b-9a0703229940" deferrability="7" deleteRule="3" fk-table-ref="TAB30" fkCardinality="7" identifying="false" name="Measurement_Ingredient_fk" physicalName="measurement_ingredient_fk" pk-table-ref="TAB38" pkCardinality="2" updateRule="3" >
+   <relationship id="REL56" populated="true" UUID="9289cf03-d429-4867-a69b-9a0703229940" deferrability="7" deleteRule="3" fk-table-ref="TAB30" fkCardinality="7" identifying="false" name="Measurement_Ingredient_fk" physicalName="Measurement_Ingredient_fk" pk-table-ref="TAB38" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP57" populated="true" UUID="7cce5d17-19a8-4d1f-933a-d5b06b08a209" fk-column-ref="COL35" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL39" />
    </relationship>
-   <relationship id="REL58" populated="true" UUID="855858df-130f-4a95-8a29-3c2a6ae15b34" deferrability="7" deleteRule="3" fk-table-ref="TAB30" fkCardinality="7" identifying="false" name="Amount_Ingredient_fk" physicalName="amount_ingredient_fk" pk-table-ref="TAB43" pkCardinality="2" updateRule="3" >
+   <relationship id="REL58" populated="true" UUID="855858df-130f-4a95-8a29-3c2a6ae15b34" deferrability="7" deleteRule="3" fk-table-ref="TAB30" fkCardinality="7" identifying="false" name="Amount_Ingredient_fk" physicalName="Amount_Ingredient_fk" pk-table-ref="TAB43" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP59" populated="true" UUID="a410eca2-643b-4755-a27e-22cfa13dced0" fk-column-ref="COL34" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL44" />
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="false"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="true"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">

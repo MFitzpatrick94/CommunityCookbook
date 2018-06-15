@@ -19,4 +19,14 @@ public class Amount
     {
         return amountName;
     }
+
+    public void setAmountId(int amountId)
+    {
+        this.amountId = amountId;
+    }
+
+    public void setAmountName(String amountName)
+    {
+        this.amountName = amountName;
+    }
 }

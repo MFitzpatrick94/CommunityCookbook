@@ -13,7 +13,11 @@
 <h1>ADD NEW RECIPE</h1>
 <form method="post" enctype="multipart/form-data">
     @CSRF.formField
-    Recipe Name:<input type="text" name="recipename" id="recipename" maxlength="200">
+    Recipe Name:<input type="text" name="recipeName" id="recipeName" maxlength="200">
+    <br>
+    Author:<input type="text" name="authorName" id="authorName" maxlength="75">
+    <br>
+    Cook Time:<input type="text" name="cookTime" id="cookTime" maxlength="25">
     <br>
   Choose a Category:  <select name="categoryId" id="categoryId">
         @for(category <- categories){
@@ -31,8 +35,9 @@
     <select name="measurementId" id="measurementId">
         @for(measurement <- measurements){
         <option value="@measurement.getMeasurementId">@measurement.getMeasurementName</option>}
+        <option value="N/A">N/A</option>
     </select>
-    <input type="text" name="ingredientname" id="ingredientname" maxlength="100">
+    <input type="text" name="ingredientName1" id="ingredientName1" maxlength="100">
     <br>
     <select name="amountId" id = "amountId">
         @for(amount <- amounts){
@@ -42,8 +47,9 @@
     <select name="measurementId" id="measurementId">
         @for(measurement <- measurements){
         <option value="@measurement.getMeasurementId">@measurement.getMeasurementName</option>}
+        <option value="N/A">N/A</option>
     </select>
-    <input type="text" name="ingredientname" id="ingredientname" maxlength="100">
+    <input type="text" name="ingredientName2" id="ingredientName2" maxlength="100">
     <br>
     <select name="amountId" id = "amountId">
         @for(amount <- amounts){
@@ -53,16 +59,18 @@
     <select name="measurementId" id="measurementId">
         @for(measurement <- measurements){
         <option value="@measurement.getMeasurementId">@measurement.getMeasurementName</option>}
+        <option value="N/A">N/A</option>
     </select>
-    <input type="text" name="ingredientname" id="ingredientname" maxlength="100">
+    <input type="text" name="ingredientName3" id="ingredientName3" maxlength="100">
 
     <br>
     <br>
     Directions:<br>
-    <p><input type="text" name="directions" id="directions" maxlength="500"></p>
-    <p> <input type="text" name="directions" id="directions" maxlength="500"></p>
-    <p> <input type="text" name="directions" id="directions" maxlength="500"></p>
-
+    <p><input type="text" name="stepNumber" id="stepNumber" size="3" maxlength="3"> <textarea name="step" cols="50" rows="4"></textarea></p>
+    <p> <input type="text" name="stepNumber" id="stepNumber" size="3" maxlength="3"><textarea name="step" cols="50" rows="4"></textarea></p>
+    <p> <input type="text" name="stepNumber" id="stepNumber" size="3" maxlength="3"><textarea name="step" cols="50" rows="4"></textarea></p>
+<br>
+    <input type="submit" value="Submit">
 </form>
 
 </body>

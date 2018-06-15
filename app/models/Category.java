@@ -26,4 +26,14 @@ public class Category
     {
         return categoryName;
     }
+
+    public void setCategoryId(int categoryId)
+    {
+        this.categoryId = categoryId;
+    }
+
+    public void setCategoryName(String categoryName)
+    {
+        this.categoryName = categoryName;
+    }
 }
