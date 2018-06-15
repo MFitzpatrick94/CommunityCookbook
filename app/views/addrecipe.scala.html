@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css" >
+    <script src="/assets/lib/jquery/jquery.min.js"></script>
     <title>Add Recipe</title>
 </head>
 <body>
@@ -27,36 +28,36 @@
     <br>
     Ingredients:
     <br>
-    <select name="amountId" id = "amountId">
+    <select name="amountId" id = "amountId1">
         @for(amount <- amounts){
         <option value="@amount.getAmountId">@amount.getAmountName</option>
         }
     </select>
-    <select name="measurementId" id="measurementId">
+    <select name="measurementId" id="measurementId1">
         @for(measurement <- measurements){
         <option value="@measurement.getMeasurementId">@measurement.getMeasurementName</option>}
         <option value="N/A">N/A</option>
     </select>
     <input type="text" name="ingredientName1" id="ingredientName1" maxlength="100">
     <br>
-    <select name="amountId" id = "amountId">
+    <select name="amountId" id = "amountId2">
         @for(amount <- amounts){
         <option value="@amount.getAmountId">@amount.getAmountName</option>
         }
     </select>
-    <select name="measurementId" id="measurementId">
+    <select name="measurementId" id="measurementId2">
         @for(measurement <- measurements){
         <option value="@measurement.getMeasurementId">@measurement.getMeasurementName</option>}
         <option value="N/A">N/A</option>
     </select>
     <input type="text" name="ingredientName2" id="ingredientName2" maxlength="100">
     <br>
-    <select name="amountId" id = "amountId">
+    <select name="amountId" id = "amountId3">
         @for(amount <- amounts){
         <option value="@amount.getAmountId">@amount.getAmountName</option>
         }
     </select>
-    <select name="measurementId" id="measurementId">
+    <select name="measurementId" id="measurementId3">
         @for(measurement <- measurements){
         <option value="@measurement.getMeasurementId">@measurement.getMeasurementName</option>}
         <option value="N/A">N/A</option>
@@ -66,9 +67,13 @@
     <br>
     <br>
     Directions:<br>
-    <p><input type="text" name="stepNumber" id="stepNumber" size="3" maxlength="3"> <textarea name="step" cols="50" rows="4"></textarea></p>
-    <p> <input type="text" name="stepNumber" id="stepNumber" size="3" maxlength="3"><textarea name="step" cols="50" rows="4"></textarea></p>
-    <p> <input type="text" name="stepNumber" id="stepNumber" size="3" maxlength="3"><textarea name="step" cols="50" rows="4"></textarea></p>
+    <p><input type="text" name="stepNumber" id="stepNumber1" size="3" maxlength="3"><textarea name="step" cols="50" rows="4"></textarea></p>
+    <p> <input type="text" name="stepNumber" id="stepNumber2" size="3" maxlength="3"><textarea name="step" cols="50" rows="4"></textarea></p>
+    <p> <input type="text" name="stepNumber" id="stepNumber3" size="3" maxlength="3"><textarea name="step" cols="50" rows="4"></textarea></p>
+
+    <div id="number"></div>
+    <button  type="button" id="stepNumber4">Add Directions</button>
+ <script src="/assets/javascripts/directionsfields.js"></script>
 <br>
     <input type="submit" value="Submit">
 </form>

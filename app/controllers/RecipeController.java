@@ -42,10 +42,12 @@ public class RecipeController extends Controller
     {
         DynamicForm form = formFactory.form().bindFromRequest();
 
+        form.rawData().keySet();
+
         int categoryId = Integer.parseInt(form.get("categoryId"));
         String recipeName = form.get("recipeName");
-        int amountId = Integer.parseInt(form.get("amountId"));
-        int measurementId = Integer.parseInt(form.get("measurementId"));
+        int amountId1= Integer.parseInt(form.get("amountId"));
+        int measurementId1 = Integer.parseInt(form.get("measurementId"));
         String ingredientName1 = form.get("ingredientName1");
         String step = form.get("step");
         String authorName = form.get("authorName");
@@ -63,8 +65,8 @@ public class RecipeController extends Controller
 
         Ingredient ingredient = new Ingredient();
         ingredient.setIngredientName(ingredientName1);
-        ingredient.setAmountId(amountId);
-        ingredient.setMeasurementId(measurementId);
+        ingredient.setAmountId(amountId1);
+        ingredient.setMeasurementId(measurementId1);
         ingredient.setRecipeId(addRecipe.getRecipeId());
 
         Directions directions = new Directions();
