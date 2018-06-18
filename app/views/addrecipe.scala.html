@@ -71,12 +71,17 @@
     <p> <input type="text" name="stepNumber" id="stepNumber2" size="3" maxlength="3"><textarea name="step" cols="50" rows="4"></textarea></p>
     <p> <input type="text" name="stepNumber" id="stepNumber3" size="3" maxlength="3"><textarea name="step" cols="50" rows="4"></textarea></p>
 
-    <div id="number"></div>
-    <button  type="button" id="stepNumber4">Add Directions</button>
- <script src="/assets/javascripts/directionsfields.js"></script>
 <br>
-    <input type="submit" value="Submit">
+
 </form>
 
+<form method="POST">
+    @helper.CSRF.formField
+    <div id="directions"></div>
+    <button type="button" id="addDirection">Add Direction</button>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+<script type="text/javascript" id="direct" src="/assets/javascripts/directionsfields.js" ></script>
 </body>
 </html>
