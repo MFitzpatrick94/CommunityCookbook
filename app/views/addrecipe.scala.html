@@ -18,7 +18,7 @@
     <br>
     Author:<input type="text" name="authorName" id="authorName" maxlength="75">
     <br>
-    Cook Time:<input type="text" name="cookTime" id="cookTime" maxlength="25">
+    Cook Time:<input type="text" name="cookTime" id="cookTime" maxlength="100">
     <br>
   Choose a Category:  <select name="categoryId" id="categoryId">
         @for(category <- categories){
@@ -28,54 +28,58 @@
     <br>
     Ingredients:
     <br>
-    <select name="amountId" id = "amountId1">
+    <select name="amountId1" id = "amountId1">
         @for(amount <- amounts){
         <option value="@amount.getAmountId">@amount.getAmountName</option>
         }
     </select>
-    <select name="measurementId" id="measurementId1">
+    <select name="measurementId1" id="measurementId1">
         @for(measurement <- measurements){
         <option value="@measurement.getMeasurementId">@measurement.getMeasurementName</option>}
-        <option value="N/A">N/A</option>
+
     </select>
     <input type="text" name="ingredientName1" id="ingredientName1" maxlength="100">
     <br>
-    <select name="amountId" id = "amountId2">
+    <select name="amountId2" id = "amountId2">
         @for(amount <- amounts){
         <option value="@amount.getAmountId">@amount.getAmountName</option>
         }
     </select>
-    <select name="measurementId" id="measurementId2">
+    <select name="measurementId2" id="measurementId2">
         @for(measurement <- measurements){
         <option value="@measurement.getMeasurementId">@measurement.getMeasurementName</option>}
-        <option value="N/A">N/A</option>
+
     </select>
     <input type="text" name="ingredientName2" id="ingredientName2" maxlength="100">
     <br>
-    <select name="amountId" id = "amountId3">
+    <select name="amountId3" id = "amountId3">
         @for(amount <- amounts){
         <option value="@amount.getAmountId">@amount.getAmountName</option>
         }
     </select>
-    <select name="measurementId" id="measurementId3">
+    <select name="measurementId3" id="measurementId3">
         @for(measurement <- measurements){
         <option value="@measurement.getMeasurementId">@measurement.getMeasurementName</option>}
-        <option value="N/A">N/A</option>
+
     </select>
     <input type="text" name="ingredientName3" id="ingredientName3" maxlength="100">
 
+        <div id="ingredients"></div>
+        <button type="button" id="addIngredient">Add Ingredient</button>
+    <script type="text/javascript" id="amount" src="/assets/javascripts/ingredientsfields.js" amountsId="@for(i<-0 to amounts.size()-1){@amounts.get(i).getAmountName@if(i<amounts.size()-1){,}}"
+            quantity="@for(j<-0 to measurements.size()-1){@measurements.get(j).getMeasurementName@if(j<measurements.size()-1){,}}"></script>
     <br>
     <br>
     Directions:<br>
-    <p><input type="text" name="stepNumber" id="stepNumber1" size="3" maxlength="3"><textarea name="step" cols="50" rows="4"></textarea></p>
-    <p> <input type="text" name="stepNumber" id="stepNumber2" size="3" maxlength="3"><textarea name="step" cols="50" rows="4"></textarea></p>
-    <p> <input type="text" name="stepNumber" id="stepNumber3" size="3" maxlength="3"><textarea name="step" cols="50" rows="4"></textarea></p>
+    <p><input type="text" name="stepNumber1" value="1" id="stepNumber1" size="3" maxlength="3"><textarea name="step1" cols="50" rows="4"></textarea></p>
+    <p> <input type="text" name="stepNumber2" value="2" id="stepNumber2" size="3" maxlength="3"><textarea name="step2" cols="50" rows="4"></textarea></p>
+    <p> <input type="text" name="stepNumber3" value="3" id="stepNumber3" size="3" maxlength="3"><textarea name="step3" cols="50" rows="4"></textarea></p>
 
 <br>
 
-</form>
 
-<form method="POST">
+
+
     @helper.CSRF.formField
     <div id="directions"></div>
     <button type="button" id="addDirection">Add Direction</button>

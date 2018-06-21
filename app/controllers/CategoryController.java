@@ -29,7 +29,6 @@ public class CategoryController extends Controller
        // DynamicForm form = formFactory.form().bindFromRequest();
         String sql = "SELECT c from Category c";
         List<Category> categories = jpaApi.em().createQuery(sql, Category.class).getResultList();
-
         return ok(views.html.category.render(categories));
     }
 

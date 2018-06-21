@@ -10,6 +10,7 @@ import play.mvc.Result;
 
 import javax.inject.Inject;
 import java.util.List;
+import java.util.Set;
 
 public class RecipeController extends Controller
 {
@@ -42,42 +43,64 @@ public class RecipeController extends Controller
     {
         DynamicForm form = formFactory.form().bindFromRequest();
 
-        form.rawData().keySet();
+        Set<String> formNames = form.rawData().keySet();
 
         int categoryId = Integer.parseInt(form.get("categoryId"));
         String recipeName = form.get("recipeName");
-        int amountId1= Integer.parseInt(form.get("amountId"));
-        int measurementId1 = Integer.parseInt(form.get("measurementId"));
-        String ingredientName1 = form.get("ingredientName1");
-        String step = form.get("step");
         String authorName = form.get("authorName");
         String cookTime = form.get("cookTime");
-        int stepNumber = Integer.parseInt(form.get("stepNumber"));
+
 
         Recipe addRecipe = new Recipe();
         addRecipe.setRecipeName(recipeName);
         addRecipe.setCategoryId(categoryId);
         addRecipe.setAuthor(authorName);
         addRecipe.setCookTime(cookTime);
-
-
         jpaApi.em().persist(addRecipe);
 
-        Ingredient ingredient = new Ingredient();
-        ingredient.setIngredientName(ingredientName1);
-        ingredient.setAmountId(amountId1);
-        ingredient.setMeasurementId(measurementId1);
-        ingredient.setRecipeId(addRecipe.getRecipeId());
+        for(String formName : formNames)
+        {
+            if(formName.startsWith("amountId"))
+            {
+                String rowNumber = formName.replace("amountId","");
+                String amount= form.get(formName);
+                int amountsId = Integer.parseInt(amount);
+                String ingredientName= form.get("ingredientName" + rowNumber);
+                String measurement = form.get("measurementId" + rowNumber);
+                int measurements = Integer.parseInt(measurement);
 
-        Directions directions = new Directions();
-        directions.setStep(step);
-        directions.setStepNumber(stepNumber);
-        directions.setRecipeId(addRecipe.getRecipeId());
+                Ingredient ingredient = new Ingredient();
+                ingredient.setIngredientName(ingredientName);
+                ingredient.setAmountId(amountsId);
+                ingredient.setMeasurementId(measurements);
+                ingredient.setRecipeId(addRecipe.getRecipeId());
+                jpaApi.em().persist(ingredient);
+            }
+        }
 
-        jpaApi.em().persist(ingredient);
-        jpaApi.em().persist(directions);
 
+        for(String formName : formNames)
+        {
+            if(formName.startsWith("stepNumber"))
+            {
+                String rowNumber = formName.replace("stepNumber", "");
+                String stepNumber = form.get(formName);
+                int stepNumbers = Integer.parseInt(stepNumber);
+                String step = form.get("step" + rowNumber);
+
+
+                Directions directions = new Directions();
+                directions.setStep(step);
+                directions.setStepNumber(stepNumbers);
+                directions.setRecipeId(addRecipe.getRecipeId());
+
+
+                jpaApi.em().persist(directions);
+            }
+        }
 
         return redirect(routes.CategoryController.getCategory());
     }
 }
+
+
