@@ -66,8 +66,12 @@
 
         <div id="ingredients"></div>
         <button type="button" id="addIngredient">Add Ingredient</button>
-    <script type="text/javascript" id="amount" src="/assets/javascripts/ingredientsfields.js" amountsId="@for(i<-0 to amounts.size()-1){@amounts.get(i).getAmountName@if(i<amounts.size()-1){,}}"
-            quantity="@for(j<-0 to measurements.size()-1){@measurements.get(j).getMeasurementName@if(j<measurements.size()-1){,}}"></script>
+    <script type="text/javascript" id="amount" src="/assets/javascripts/ingredientsfields.js"
+            amountsId="@for(i<-0 to amounts.size()-1){@amounts.get(i).getAmountName@if(i<amounts.size()-1){,}}"
+            quantity="@for(j<-0 to measurements.size()-1){@measurements.get(j).getMeasurementName@if(j<measurements.size()-1){,}}"
+            >
+
+    </script>
     <br>
     <br>
     Directions:<br>

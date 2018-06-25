@@ -14,7 +14,7 @@ public class Recipe
     private String recipeName;
     private String author;
     private String cookTime;
-   // private String ingredientId;
+
 
 
 
@@ -67,16 +67,5 @@ public class Recipe
     {
         this.cookTime = cookTime;
     }
-    /* public String getIngredientId()
-    {
-        return ingredientId;
-    }
-
-    public void setIngredientId(String ingredientId)
-    {
-        this.ingredientId = ingredientId;
-    }*/
-
-
 
 }

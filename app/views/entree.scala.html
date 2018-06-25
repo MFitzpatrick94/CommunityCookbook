@@ -1,0 +1,22 @@
+@(entrees : List[Recipe])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css" >
+    <title>Entrees</title>
+</head>
+<body>
+@NavBar.render("entree")
+
+<table>
+    @for(entree <- entrees){
+    <tr>
+        <td><a href="recipe/@entree.getRecipeId">@entree.getRecipeName</a></td>
+    </tr>
+    }
+</table>
+
+</body>
+</html>

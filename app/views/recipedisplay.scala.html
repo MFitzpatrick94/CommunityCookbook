@@ -1,0 +1,30 @@
+@(recipe:Recipe, ingredients:List[IngredientMeasurement], directions:List[Directions])
+<!DOCTYPE html>
+@import helper._
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css" >
+<head>
+    <meta charset="UTF-8">
+    <title>@recipe.getRecipeName</title>
+</head>
+<body>
+<h1>@recipe.getRecipeName</h1>
+<p>@recipe.getAuthor</p>
+<p>@recipe.getCookTime</p>
+<br>
+<br>
+<p>
+
+    @for(ingredient <- ingredients){
+    @ingredient.getMeasurementName
+    @ingredient.getAmountName
+    @ingredient.getIngredientName<p></p>
+    }</p>
+<br>
+<br>
+<p>@for(direction <- directions){
+    @direction.getStepNumber. @direction.getStep<p></p>
+    }</p>
+</body>
+</html>

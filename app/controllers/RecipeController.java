@@ -101,6 +101,36 @@ public class RecipeController extends Controller
 
         return redirect(routes.CategoryController.getCategory());
     }
+
+    @Transactional(readOnly = true)
+    public Result getRecipeDetails(Integer recipeId)
+    {
+        String sql = "SELECT r FROM Recipe r WHERE recipeId = :recipeId";
+
+        Recipe recipe =  jpaApi.em().
+                createQuery(sql, Recipe.class).
+                setParameter("recipeId", recipeId).
+                getSingleResult();
+
+        String ingredientSQl = "SELECT NEW models.IngredientMeasurement(i.ingredientId, i.ingredientName, a.amountName, m.measurementName)" +
+                "FROM Ingredient i " +
+                "JOIN Amount a on i.amountId = a.amountId " +
+                "JOIN Measurement m on i.measurementId = m. measurementId " +
+                " WHERE recipeId = :recipeId ORDER BY i.ingredientId";
+
+        List<IngredientMeasurement> ingredient = jpaApi.em().
+                createQuery(ingredientSQl, IngredientMeasurement.class).
+                setParameter("recipeId", recipeId).getResultList();
+
+        String directionSQL = "SELECT d FROM Directions d WHERE recipeId = :recipeId ORDER BY d.stepNumber";
+
+        List<Directions> directions = jpaApi.em().
+                createQuery(directionSQL, Directions.class).
+                setParameter("recipeId", recipeId).getResultList();
+
+
+        return ok(views.html.recipedisplay.render(recipe, ingredient, directions));
+    }
 }
 
 
