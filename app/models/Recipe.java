@@ -14,6 +14,7 @@ public class Recipe
     private String recipeName;
     private String author;
     private String cookTime;
+    private byte[] picture;
 
 
 
@@ -68,4 +69,13 @@ public class Recipe
         this.cookTime = cookTime;
     }
 
+    public byte[] getPicture()
+    {
+        return picture;
+    }
+
+    public void setPicture(byte[] picture)
+    {
+        this.picture = picture;
+    }
 }

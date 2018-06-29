@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+@import helper._
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+<h1>Welcome to Community Cookbook</h1>
+<p></p>
+<form method="post">
+    @CSRF.formField
+Email<input type="text" name="email" id="email" maxlength="50">
+<br>
+Password<input type="text" name="password" id="password" maxlength="50">
+<br>
+<input type="submit" value="Log In">
+</form>
+</body>
+</html>

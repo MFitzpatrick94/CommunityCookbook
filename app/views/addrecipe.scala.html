@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="/assets/stylesheets/custom.css">
     <script src="/assets/lib/jquery/jquery.min.js"></script>
     <title>Add Recipe</title>
 </head>
@@ -19,6 +20,9 @@
     Author:<input type="text" name="authorName" id="authorName" maxlength="75">
     <br>
     Cook Time:<input type="text" name="cookTime" id="cookTime" maxlength="100">
+    Serving Size:<input type="text" name="servingSize" id="servingSize" size="10" maxlength="15">
+    <br>
+    <input type="file" id="photo" name="photo" >
     <br>
   Choose a Category:  <select name="categoryId" id="categoryId">
         @for(category <- categories){
@@ -68,6 +72,7 @@
         <button type="button" id="addIngredient">Add Ingredient</button>
     <script type="text/javascript" id="amount" src="/assets/javascripts/ingredientsfields.js"
             amountsId="@for(i<-0 to amounts.size()-1){@amounts.get(i).getAmountName@if(i<amounts.size()-1){,}}"
+            amounts="@for(i<-0 to amounts.size()-1){@amounts.get(i).getAmountId@if(i<amounts.size()-1){,}}"
             quantity="@for(j<-0 to measurements.size()-1){@measurements.get(j).getMeasurementName@if(j<measurements.size()-1){,}}"
             quantityIds="@for(j<-0 to measurements.size()-1){@measurements.get(j).getMeasurementId@if(j<measurements.size()-1){,}}"
             >
@@ -81,8 +86,6 @@
     <p> <input type="text" name="stepNumber3" value="3" id="stepNumber3" size="3" maxlength="3"><textarea name="step3" cols="50" rows="4"></textarea></p>
 
 <br>
-
-
 
 
     @helper.CSRF.formField

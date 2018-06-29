@@ -1,35 +1,37 @@
 package models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class User
 {
-    @Id
-    private String userId;
-    private String userName;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int userId;
+    private String email;
     private byte[] password;
     private byte[] salt;
 
-    public String getUserId()
+    public int getUserId()
     {
         return userId;
     }
 
-    public void setUserId(String userId)
+    public void setUserId(int userId)
     {
         this.userId = userId;
     }
 
-    public String getUserName()
+    public String getEmail()
     {
-        return userName;
+        return email;
     }
 
-    public void setUserName(String userName)
+    public void setEmail(String email)
     {
-        this.userName = userName;
+        this.email = email;
     }
 
     public byte[] getPassword()

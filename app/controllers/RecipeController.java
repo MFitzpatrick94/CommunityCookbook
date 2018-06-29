@@ -1,14 +1,17 @@
 package controllers;
 
+import com.google.common.io.Files;
 import models.*;
 import play.data.DynamicForm;
 import play.data.FormFactory;
 import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
 import play.mvc.Controller;
+import play.mvc.Http;
 import play.mvc.Result;
 
 import javax.inject.Inject;
+import java.io.File;
 import java.util.List;
 import java.util.Set;
 
@@ -41,6 +44,9 @@ public class RecipeController extends Controller
     @Transactional
     public Result postAddRecipe()
     {
+        Http.MultipartFormData<File> formData = request().body().asMultipartFormData();
+        Http.MultipartFormData.FilePart<File> filePart = formData.getFile("photo");
+        File file = filePart.getFile();
         DynamicForm form = formFactory.form().bindFromRequest();
 
         Set<String> formNames = form.rawData().keySet();
@@ -56,6 +62,17 @@ public class RecipeController extends Controller
         addRecipe.setCategoryId(categoryId);
         addRecipe.setAuthor(authorName);
         addRecipe.setCookTime(cookTime);
+        if(file !=null)
+        {
+            try
+            {
+                addRecipe.setPicture(Files.toByteArray(file));
+            }
+            catch (Exception e)
+            {
+                //do nothing
+            }
+        }
         jpaApi.em().persist(addRecipe);
 
         for(String formName : formNames)
@@ -130,6 +147,16 @@ public class RecipeController extends Controller
 
 
         return ok(views.html.recipedisplay.render(recipe, ingredient, directions));
+    }
+
+    @Transactional(readOnly = true)
+    public Result getPicture(Integer recipeId)
+    {
+        String sql = "SELECT r FROM Recipe r " +
+                "WHERE recipeId = :recipeId";
+
+        Recipe recipe = jpaApi.em().createQuery(sql, Recipe.class).setParameter("recipeId", recipeId).getSingleResult();
+        return ok(recipe.getPicture()).as("image/jpg");
     }
 }
 
