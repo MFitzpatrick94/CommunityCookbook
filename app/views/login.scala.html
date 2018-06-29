@@ -16,5 +16,9 @@ Password<input type="text" name="password" id="password" maxlength="50">
 <br>
 <input type="submit" value="Log In">
 </form>
+<form action="@routes.UserController.getNewUser" method="get">
+    @CSRF.formField
+    <input type="submit" value="New User" >
+</form>
 </body>
 </html>
