@@ -25,9 +25,15 @@ public class CategoryController extends Controller
     @Transactional(readOnly = true)
     public Result getCategory()
     {
-        String sql = "SELECT c from Category c";
-        List<Category> categories = jpaApi.em().createQuery(sql, Category.class).getResultList();
-        return ok(views.html.category.render(categories));
+        String sql = "SELECT r From Recipe r Order By r.recipeId desc";
+
+        List<Recipe> pictures = jpaApi.em().createQuery(sql, Recipe.class).setMaxResults(10).getResultList();
+
+        //String recipeSQL = "SELECT r.recipeId, r.recipeName From Recipe r Order By r.recipeId desc";
+
+       // List<Recipe> recipes = jpaApi.em().createQuery(recipeSQL, Recipe.class).setMaxResults(10).getResultList();
+
+        return ok(views.html.category.render(pictures));
     }
 
     @Transactional(readOnly = true)
@@ -90,4 +96,8 @@ public class CategoryController extends Controller
 
         return ok(views.html.drink.render(drinks));
     }
+
+
+
+
 }

@@ -62,7 +62,7 @@ public class RecipeController extends Controller
         addRecipe.setCategoryId(categoryId);
         addRecipe.setAuthor(authorName);
         addRecipe.setCookTime(cookTime);
-        if(file !=null)
+        if(file !=null && file.length()>0)
         {
             try
             {
