@@ -1,5 +1,9 @@
  .navbar {
-  background-color:#66ff99;
-    text-color:#ffffff;
+  background-color:#4d0099;
+
  }
 
+li a {
+    color: #ffffff;
+
+}
