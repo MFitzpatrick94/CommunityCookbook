@@ -9,10 +9,10 @@
     <title>@recipe.getRecipeName</title>
 </head>
 <body>
-@if(recipe.getPicture==null){
-<image src="/assets/images/defaultpicture.jpg" height="200"></image>
+@if(recipe.getPicture!=null){
+<image src="/picture/@recipe.getRecipeId" height="200" height="200"></image>
     }else{
-    <image src="/picture/@recipe.getRecipeId" height="200"></image>
+    <image src="/assets/images/defaultpicture.jpg" height="200"></image>
     }
 <h1>@recipe.getRecipeName</h1>
 <h3>@recipe.getAuthor</h3>

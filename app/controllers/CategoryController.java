@@ -29,10 +29,6 @@ public class CategoryController extends Controller
 
         List<Recipe> pictures = jpaApi.em().createQuery(sql, Recipe.class).setMaxResults(10).getResultList();
 
-        //String recipeSQL = "SELECT r.recipeId, r.recipeName From Recipe r Order By r.recipeId desc";
-
-       // List<Recipe> recipes = jpaApi.em().createQuery(recipeSQL, Recipe.class).setMaxResults(10).getResultList();
-
         return ok(views.html.category.render(pictures));
     }
 
