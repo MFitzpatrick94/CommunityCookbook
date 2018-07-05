@@ -6,17 +6,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="/assets/stylesheets/recipedisplay.css">
     <title>@recipe.getRecipeName</title>
 </head>
 <body>
+<div class="col-12">
+    <div class="pic">
 @if(recipe.getPicture!=null){
 <image src="/picture/@recipe.getRecipeId" height="200" height="200"></image>
     }else{
     <image src="/assets/images/defaultpicture.jpg" height="200"></image>
-    }
+    }</div>
 <h1>@recipe.getRecipeName</h1>
 <h3>@recipe.getAuthor</h3>
-<p>@recipe.getCookTime</p>
+<p class="time">@recipe.getCookTime</p>
+</div>
 <br>
 <br>
 <p>
@@ -29,7 +33,7 @@
 <br>
 <br>
 <p>@for(direction <- directions){
-    @direction.getStepNumber. @direction.getStep<p></p>
+    @direction.getStepNumber. @direction.getStep<p></p><br>
     }</p>
 </body>
 </html>

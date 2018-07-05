@@ -7,8 +7,11 @@ text-align: center
 body{
 background-color: #ffc2b3;
 text-align: center
+
 }
 
 td a{
 color: black;
+font-size: 30px;
+ font-weight: bold;
 }

@@ -6,9 +6,11 @@ text-align: center
 
 body{
 background-color: #e6ffe6;
-text-align: center
+text-align: center;
 }
 
 td a{
 color: black;
+font-size: 30px;
+font-weight: bold;
 }
