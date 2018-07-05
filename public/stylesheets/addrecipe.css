@@ -1,0 +1,42 @@
+h1{
+background-color: #4c0080;
+color: white;
+text-align: center
+}
+
+body{
+background-color: #ebccff;
+text-align: center
+}
+
+
+.button1{
+border-radius: 8px;
+background-color: #ccddff;
+}
+
+.button2{
+border-radius: 8px;
+background-color: #ccddff;
+}
+
+.button3{
+border-radius: 8px;
+background-color: #80ffaa;
+}
+
+
+textarea{
+border-radius: 8px;
+background-color: #ffeee6;
+}
+
+input{
+border-radius: 8px;
+background-color: #ffeee6;
+}
+
+select{
+border-radius: 8px;
+background-color: #ffeee6;
+}

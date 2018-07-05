@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css" >
     <link rel="stylesheet" href="/assets/stylesheets/custom.css">
+    <link rel="stylesheet" href="/assets/stylesheets/addrecipe.css">
     <script src="/assets/lib/jquery/jquery.min.js"></script>
     <title>Add Recipe</title>
 </head>
@@ -16,14 +17,14 @@
 <form method="post" enctype="multipart/form-data">
     @CSRF.formField
     Recipe Name:<input type="text" name="recipeName" id="recipeName" maxlength="200">
-    <br>
+
     Author:<input type="text" name="authorName" id="authorName" maxlength="75">
-    <br>
+    <br><br>
     Cook Time:<input type="text" name="cookTime" id="cookTime" maxlength="100">
     Serving Size:<input type="text" name="servingSize" id="servingSize" size="10" maxlength="15">
-    <br>
-    <input type="file" id="photo" name="photo" >
-    <br>
+    <br><br>
+    Add a Photo: <input type="file" id="photo" name="photo" >
+    <br><br>
   Choose a Category:  <select name="categoryId" id="categoryId">
         @for(category <- categories){
         <option value="@category.getCategoryId">@category.getCategoryName</option>
@@ -69,7 +70,7 @@
     <input type="text" name="ingredientName3" id="ingredientName3" maxlength="100">
 
         <div id="ingredients"></div>
-        <button type="button" id="addIngredient">Add Ingredient</button>
+        <button class="button button1" type="button" id="addIngredient">Add Ingredient</button>
     <script type="text/javascript" id="amount" src="/assets/javascripts/ingredientsfields.js"
             amountsId="@for(i<-0 to amounts.size()-1){@amounts.get(i).getAmountName@if(i<amounts.size()-1){,}}"
             amounts="@for(i<-0 to amounts.size()-1){@amounts.get(i).getAmountId@if(i<amounts.size()-1){,}}"
@@ -85,14 +86,14 @@
     <p> <input type="text" name="stepNumber2" value="2" id="stepNumber2" size="3" maxlength="3"><textarea name="step2" cols="50" rows="4"></textarea></p>
     <p> <input type="text" name="stepNumber3" value="3" id="stepNumber3" size="3" maxlength="3"><textarea name="step3" cols="50" rows="4"></textarea></p>
 
-<br>
+
 
 
     @helper.CSRF.formField
     <div id="directions"></div>
-    <button type="button" id="addDirection">Add Direction</button>
-    <br>
-    <input type="submit" value="Submit">
+    <button class="button button2" type="button" id="addDirection">Add Direction</button>
+    <br><br>
+    <input class="button button3" type="submit" value="Submit">
 </form>
 <script type="text/javascript" id="direct" src="/assets/javascripts/directionsfields.js" ></script>
 </body>

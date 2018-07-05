@@ -3,19 +3,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="/assets/stylesheets/createaccount.css">
     <title>Create Account</title>
 </head>
 <body>
 <h1>Create a New Account!</h1>
-<p></p>
+<p></p><br><br><br>
+<div class="col-12" align="center">
 <form method="Post">
     @CSRF.formField
-    Email<input type="text" name="email" id="email" maxlength="50">
+    Username/Email<input type="text" name="email" id="email" maxlength="50">
     <br>
     Password<input type="text" name="password" id="password" maxlength="50">
-    <br>
-    <input type="submit" value="Create Account">
+    <br><br>
+    <input class="button1" type="submit" value="Create Account">
 </form>
-
+</div>
 </body>
 </html>

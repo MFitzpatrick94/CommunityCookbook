@@ -3,22 +3,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="/assets/stylesheets/login.css">
     <title>Welcome</title>
 </head>
 <body>
+<br>
 <h1>Welcome to Community Cookbook</h1>
-<p></p>
+<br><br><br><br>
+
+<div class="col-12" align="center">
 <form method="post">
     @CSRF.formField
-Email<input type="text" name="email" id="email" maxlength="50">
+Username/Email<input class="user" type="text" name="email" id="email" maxlength="50">
 <br>
-Password<input type="text" name="password" id="password" maxlength="50">
+Password<input class="password" type="text" name="password" id="password" maxlength="50">
 <br>
-<input type="submit" value="Log In">
+<input class="button1" type="submit" value="Log In">
 </form>
 <form action="@routes.UserController.getNewUser" method="get">
     @CSRF.formField
-    <input type="submit" value="New User" >
+    <input class="button2" type="submit" value="New User" >
 </form>
+</div>
 </body>
 </html>

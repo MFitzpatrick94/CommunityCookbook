@@ -6,18 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css" >
     <link rel="stylesheet" href="/assets/stylesheets/custom.css">
+    <link rel="stylesheet" href="/assets/stylesheets/drink.css">
     <title>Drinks</title>
 </head>
 <body>
 @NavBar.render("drink")
-
-<table>
+<h1>DRINKS</h1>
+<div class="col-12" align="center">
+    <table align="center">
     @for(drink <- drinks){
     <tr>
         <td><a href="recipe/@drink.getRecipeId">@drink.getRecipeName</a></td>
     </tr>
     }
 </table>
-
+</div>
 </body>
 </html>

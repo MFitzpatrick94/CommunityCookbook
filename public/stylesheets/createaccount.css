@@ -1,0 +1,24 @@
+h1{
+background-color: #194d19;
+color: white;
+text-align: center;
+font-size: 70px;
+}
+
+body{
+background-color: #d9f2d9;
+text-align: center;
+font-size: 30Px;
+font-weight: bold;
+}
+form{
+text-align: center;
+font-size: 30Px;
+font-weight: bold;
+}
+
+.button1{
+border-radius: 8px;
+border-color: black;
+background-color: #99ccff;
+}

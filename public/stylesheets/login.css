@@ -1,0 +1,29 @@
+h1{
+color: black;
+text-align: center;
+font-size: 70px;
+}
+
+body{
+background-image: url("/assets/images/checked.jpg");
+text-align: center;
+font-size: 30Px;
+font-weight: bold;
+}
+form{
+text-align: center;
+font-size: 30Px;
+font-weight: bold;
+}
+
+.button1{
+border-radius: 8px;
+border-color: black;
+background-color: #0033cc;
+}
+
+.button2{
+border-radius: 8px;
+border-color: black;
+background-color: #00802b;
+}
