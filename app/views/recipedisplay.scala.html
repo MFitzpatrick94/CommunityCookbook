@@ -33,7 +33,12 @@
 <br>
 <br>
 <p>@for(direction <- directions){
+    @if(direction.getStep.length > 0){
     @direction.getStepNumber. @direction.getStep<p></p><br>
+    }else{
+
+    }
+
     }</p>
 </body>
 </html>

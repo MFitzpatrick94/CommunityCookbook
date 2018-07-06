@@ -1,5 +1,6 @@
 h1{
 color: #ffffe6;
+text-shadow: 2px 2px black;
 text-align: center;
 font-size: 70px;
 }
@@ -12,10 +13,13 @@ font-weight: bold;
 }
 form{
 color: #ffffe6;
+text-shadow: 2px 2px black;
 text-align: center;
 font-size: 30Px;
 font-weight: bold;
 }
+
+
 
 .button1{
 border-radius: 8px;
