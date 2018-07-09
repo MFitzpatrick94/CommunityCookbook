@@ -6,10 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="/assets/stylesheets/custom.css">
     <link rel="stylesheet" href="/assets/stylesheets/recipedisplay.css">
     <title>@recipe.getRecipeName</title>
 </head>
 <body>
+@NavBar.render("recipe")
+<br>
 <div class="col-12">
     <div class="pic">
 @if(recipe.getPicture!=null){
@@ -23,15 +26,17 @@
 </div>
 <br>
 <br>
+<div class="details">
 <p>
 
     @for(ingredient <- ingredients){
     @ingredient.getMeasurementName
     @ingredient.getAmountName
     @ingredient.getIngredientName<p></p>
-    }</p>
+    }</p></div>
 <br>
 <br>
+<div class="directions">
 <p>@for(direction <- directions){
     @if(direction.getStep.length > 0){
     @direction.getStepNumber. @direction.getStep<p></p><br>
@@ -39,6 +44,6 @@
 
     }
 
-    }</p>
+    }</p></div>
 </body>
 </html>
