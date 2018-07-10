@@ -15,6 +15,7 @@
 </head>
 <body>
 @NavBar.render("Home")
+<br>
 <div class="container">
     <div class="row">
         <div class="col-4"></div>
@@ -24,15 +25,18 @@
                 <div class="carousel-inner">
                     @for(i <- 0 until pictures.length){
                     <div class="carousel-item @if(i==0){active}">
-                        @if(pictures.get(i).getPicture ==null){
-                        <img src="/assets/images/defaultpicture.jpg" height="500" width="400" alt="@pictures.get(i).getRecipeName">
-                        }else{
-                        <img src="/picture/@pictures.get(i).getRecipeId" height="500" width="400" alt="@pictures.get(i).getRecipeName">
-                        }
-                        <div class="carousel-caption">
-                            <h3><a href="/recipe/@pictures.get(i).getRecipeId">@pictures.get(i).getRecipeName</a></h3>
+                        <div class="row">
+                            @if(pictures.get(i).getPicture ==null){
+                            <img src="/assets/images/defaultpicture.jpg" height="500" width="400" alt="@pictures.get(i).getRecipeName">
+                            }else{
+                            <img src="/picture/@pictures.get(i).getRecipeId" height="500" width="400" alt="@pictures.get(i).getRecipeName">
+                            }
                         </div>
-
+                        <div class="row">
+                            <div class="col-10" class="name">
+                            <h3><a href="/recipe/@pictures.get(i).getRecipeId">@pictures.get(i).getRecipeName</a></h3>
+                            </div>
+                        </div>
                     </div>
                     }
                 </div>

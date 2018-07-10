@@ -1,3 +1,12 @@
 body {
     background-color:#ffffe6;
 }
+
+a{
+color: #009900;
+font-weight: bold;
+}
+
+.name{
+align: center;
+}
